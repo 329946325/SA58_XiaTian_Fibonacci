@@ -1,0 +1,16 @@
+version: '3'
+services:
+  backend:
+    image: coin-master
+    build:
+      context: ./CoinMaster
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+  frontend:
+    image: react-app
+    build:
+      context: ./coin-optimizer-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
