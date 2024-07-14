@@ -1,16 +1,15 @@
 version: '3'
 services:
-  backend:
-    image: coin-master
+  frontend:
+    image: 891377161733.dkr.ecr.ap-southeast-1.amazonaws.com/sa58_xiatian_frontend:latest
     build:
-      context: ./CoinMaster
-      dockerfile: Dockerfile
+      context: ./coin-optimizer-app-new
+      args:
+        - REACT_APP_API_BASE_URL=http://ec2-47-128-244-66.ap-southeast-1.compute.amazonaws.com:8080
+    ports:
+      - "80:80"
+  backend:
+    image: 891377161733.dkr.ecr.ap-southeast-1.amazonaws.com/sa58_xiatian_backend:latest
+    build: ./CoinMaster
     ports:
       - "8080:8080"
-  frontend:
-    image: react-app
-    build:
-      context: ./coin-optimizer-app
-      dockerfile: Dockerfile
-    ports:
-      - "3000:80"
