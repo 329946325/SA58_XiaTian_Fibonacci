@@ -2,12 +2,11 @@ version: '3'
 services:
   frontend:
     image: 891377161733.dkr.ecr.ap-southeast-1.amazonaws.com/sa58_xiatian_frontend:latest
-    build:
-      context: ./coin-optimizer-app-new
-      args:
-        - REACT_APP_API_BASE_URL=http://ec2-47-128-244-66.ap-southeast-1.compute.amazonaws.com:8080
     ports:
       - "80:80"
+    environment:
+      - REACT_APP_API_BASE_URL=http://ec2-47-128-244-66.ap-southeast-1.compute.amazonaws.com:8080
+
   backend:
     image: 891377161733.dkr.ecr.ap-southeast-1.amazonaws.com/sa58_xiatian_backend:latest
     build: ./CoinMaster
