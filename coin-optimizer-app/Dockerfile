@@ -10,6 +10,9 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Ensure permissions for node_modules/.bin
+RUN chmod +x node_modules/.bin/react-scripts
+
 # Build the application
 RUN npm run build
 
