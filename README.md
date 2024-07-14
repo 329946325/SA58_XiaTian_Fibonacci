@@ -25,9 +25,27 @@ This project includes a Spring Boot backend and a React frontend. The Spring Boo
     This command will build the Docker images and start the containers for both the Spring Boot backend and React frontend.
 
 3. Access the applications:
-
-    - Spring Boot backend: `http://localhost:8080`
     - React frontend: `http://localhost:3000`
+
+3. Test the applications:
+    - Example 1:
+        Input:
+            Target amount: 7.3
+            Coin denominations (comma-separated): 0.1,0.5,1,5,10
+        Output: 
+            0.1, 0.1, 0.1, 1, 1, 5
+
+    - Example 2:
+        Input:
+            Target amount: 103
+            Coin denominations (comma-separated): 1,2,50
+        Output: 
+            1, 2, 50, 50
+
+
+
+## Java Spring Boot
+- Spring Boot backend: `http://localhost:8080/api/coins/optimize`
 
 ## Dockerfile for Spring Boot Application
 
