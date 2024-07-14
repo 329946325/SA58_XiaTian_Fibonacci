@@ -29,18 +29,18 @@ This project includes a Spring Boot backend and a React frontend. The Spring Boo
 
 3. Test the applications:
     - Example 1:
-        Input:
-            Target amount: 7.3
-            Coin denominations (comma-separated): 0.1,0.5,1,5,10
-        Output: 
-            0.1, 0.1, 0.1, 1, 1, 5
+        - Input:
+            - Target amount: 7.3
+            - Coin denominations (comma-separated): 0.1,0.5,1,5,10
+        - Output: 
+           - 0.1, 0.1, 0.1, 1, 1, 5
 
     - Example 2:
-        Input:
-            Target amount: 103
-            Coin denominations (comma-separated): 1,2,50
-        Output: 
-            1, 2, 50, 50
+        - Input:
+            - Target amount: 103
+            - Coin denominations (comma-separated): 1,2,50
+        - Output: 
+            - 1, 2, 50, 50
 
 
 
