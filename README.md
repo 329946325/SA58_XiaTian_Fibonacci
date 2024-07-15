@@ -41,16 +41,18 @@ This project includes a Spring Boot backend and a React frontend. The Spring Boo
             - Coin denominations (comma-separated): 1,2,50
         - Output: 
             - 1, 2, 50, 50
-            - 
-===============================================================================================
-Due to the time limit for video, I include some introductions here for your kind reference :)
+              
+==============================================================================
+Due to the time limit for the video, I include some introductions here for your kind reference :)
 ## Challenge 1: Logic and Problem Solving (Done)
     ## Java Spring Boot
-        1. Coin Master Controller
+        1. Coin Master Controller (Prioritize larger value coins)
             Firstly I complete a preliminary version called "Coin Master Controller" with simple logic to select coin from the largest denomination.
-            But this logic main induce some problems.
-        2. Coin OptimizerController
-            Then I design the logic to maintain the mininum number of the total amount of coins. Every pair of current amount and last coin used is stored into a hashmap. For the given expected amount, it will look for the paired last coin and deduct from the total amount and so on （A bit of recursive thinking).
+            But this logic main induce some problems, because prioritize to use large amount coin first may lead to more small coin, which is not people usually want:
+                e.g. $0.4 = $0.35 * 1 + $0.01 * 5 (total 6 coins)
+                          = $0.1 * 4 (total 4 coins)
+        2. Coin OptimizerController (Mininum number of total coin amount)
+            So I design the logic to maintain the mininum number of the total amount of coins. Every pair of current amount and last coin used is stored into a hashmap. For the given expected amount, it will look for the paired last coin and deduct from the total amount and so on （A bit of recursive thinking).
             In addition, this controller is converted into a rest api controller to easier future implementation.
             Spring Boot backend: `http://localhost:8080/api/coins/optimize`
 ## Bonus
