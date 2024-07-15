@@ -41,26 +41,75 @@ This project includes a Spring Boot backend and a React frontend. The Spring Boo
             - Coin denominations (comma-separated): 1,2,50
         - Output: 
             - 1, 2, 50, 50
+            - 
+===============================================================================================
+Due to the time limit for video, I include some introductions here for your kind reference :)
+## Challenge 1: Logic and Problem Solving (Done)
+    ## Java Spring Boot
+        1. Coin Master Controller
+            Firstly I complete a preliminary version called "Coin Master Controller" with simple logic to select coin from the largest denomination.
+            But this logic main induce some problems.
+        2. Coin OptimizerController
+            Then I design the logic to maintain the mininum number of the total amount of coins. Every pair of current amount and last coin used is stored into a hashmap. For the given expected amount, it will look for the paired last coin and deduct from the total amount and so on （A bit of recursive thinking).
+            In addition, this controller is converted into a rest api controller to easier future implementation.
+            Spring Boot backend: `http://localhost:8080/api/coins/optimize`
+## Bonus
+    ## React JS (Done)
+        React JS is implemented for the front end UI desin.
+        React frontend: `http://localhost:3000`
+
+## Challenge 2: Containers (Done)
+    ## Docker
+        Both the front end(Coin Master Folder) and back end(coin-optimize-spp) design have a DockerFile inside, and these two form a composed `docker-compose.yml` to build the environment. The structure is as below:
+SA58_YourName_Fibonacci/
+├── README.md
+├── docker-compose.yml
+├── CoinMaster
+│   ├── Dockerfile
+│   ├── src/
+│   └── ...
+└── coin-optimizer-app
+    ├── Dockerfile
+    ├── src/
+    └── ...
+
+## Challenge 3: Cloud Deployment 
+    # EC2 public DNS: ec2-47-128-244-66.ap-southeast-1.compute.amazonaws.com
+    Due to some issues during registering Oracle Cloud, I choose to use AWS for cloud deployment.
+    My Steps:
+        - Create Usergroup and User (Done)
+        - Create ECR repository (Done)
+        - Lauch and connect to EC2 instance (Done)
+        - Install docker and docker compose (Done)
+        - Deploy the applciation (Done)
+        - Verify the deployment 
+               I encounter some problems when trying to connect to the public DNS of my EC2 instance.
+                   Actions: Check Container Status
+                            Check security gourp rules
+                            Inspect Logs
+                            Ensure Containers are Networked Correctly
+                    But still haven't find out the root cause and still working on it...
+
+Thank you for your time and have a nice day!
 
 
 
-## Java Spring Boot
-- Spring Boot backend: `http://localhost:8080/api/coins/optimize`
 
-## Dockerfile for Spring Boot Application
 
-```dockerfile
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-alpine
+    ## Dockerfile for Spring Boot Application
 
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the JAR file into the container
-COPY target/your-application-name.jar app.jar
-
-# Make port 8080 available to the world outside this container
-EXPOSE 8080
-
-# Run the JAR file
-ENTRYPOINT ["java", "-jar", "app.jar"]
+    ```dockerfile
+    # Use an official OpenJDK runtime as a parent image
+    FROM openjdk:17-jdk-alpine
+    
+    # Set the working directory in the container
+    WORKDIR /app
+    
+    # Copy the JAR file into the container
+    COPY target/your-application-name.jar app.jar
+    
+    # Make port 8080 available to the world outside this container
+    EXPOSE 8080
+    
+    # Run the JAR file
+    ENTRYPOINT ["java", "-jar", "app.jar"]
