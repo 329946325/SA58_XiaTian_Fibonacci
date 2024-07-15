@@ -63,17 +63,17 @@ Due to the time limit for the video, I include some introductions here for your 
 ## Challenge 2: Containers (Done)
     ## Docker
         Both the front end(Coin Master Folder) and back end(coin-optimize-spp) design have a DockerFile inside, and these two form a composed `docker-compose.yml` to build the environment. The structure is as below:
-SA58_YourName_Fibonacci/
-├── README.md
-├── docker-compose.yml
-├── CoinMaster
-│   ├── Dockerfile
-│   ├── src/
-│   └── ...
-└── coin-optimizer-app
-    ├── Dockerfile
-    ├── src/
-    └── ...
+            SA58_YourName_Fibonacci/
+            ├── README.md
+            ├── docker-compose.yml
+            ├── CoinMaster
+            │   ├── Dockerfile
+            │   ├── src/
+            │   └── ...
+            └── coin-optimizer-app
+                ├── Dockerfile
+                ├── src/
+                └── ...
 
 ## Challenge 3: Cloud Deployment 
     # EC2 public DNS: ec2-47-128-244-66.ap-southeast-1.compute.amazonaws.com
