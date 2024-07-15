@@ -62,7 +62,9 @@ Due to the time limit for the video, I include some introductions here for your 
 
 ## Challenge 2: Containers (Done)
     ## Docker
-        Both the front end(Coin Master Folder) and back end(coin-optimize-spp) design have a DockerFile inside, and these two form a composed `docker-compose.yml` to build the environment. The structure is as below:
+        Both the front end(Coin Master Folder) and back end(coin-optimize-spp) design have a DockerFile inside, 
+        and these two form a composed `docker-compose.yml` to build the environment. 
+        The structure is as below:
             SA58_YourName_Fibonacci/
             ├── README.md
             ├── docker-compose.yml
